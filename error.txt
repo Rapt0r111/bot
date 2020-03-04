@@ -1,0 +1,160 @@
+2020-03-04 23:37:12,099 (util.py:66 PollingThread) ERROR - TeleBot: "ConnectionError occurred, args=(ProtocolError('Connection aborted.', ConnectionAbortedError(103, 'Software caused connection abort')),)
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/connectionpool.py", line 665, in urlopen
+    httplib_response = self._make_request(
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/connectionpool.py", line 421, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    httplib_response = conn.getresponse()
+  File "/data/data/com.termux/files/usr/lib/python3.8/http/client.py", line 1322, in getresponse
+    response.begin()
+  File "/data/data/com.termux/files/usr/lib/python3.8/http/client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "/data/data/com.termux/files/usr/lib/python3.8/http/client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/data/data/com.termux/files/usr/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/data/data/com.termux/files/usr/lib/python3.8/ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "/data/data/com.termux/files/usr/lib/python3.8/ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+ConnectionAbortedError: [Errno 103] Software caused connection abort
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/connectionpool.py", line 719, in urlopen
+    retries = retries.increment(
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/util/retry.py", line 400, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/packages/six.py", line 734, in reraise
+    raise value.with_traceback(tb)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/connectionpool.py", line 665, in urlopen
+    httplib_response = self._make_request(
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/connectionpool.py", line 421, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    httplib_response = conn.getresponse()
+  File "/data/data/com.termux/files/usr/lib/python3.8/http/client.py", line 1322, in getresponse
+    response.begin()
+  File "/data/data/com.termux/files/usr/lib/python3.8/http/client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "/data/data/com.termux/files/usr/lib/python3.8/http/client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/data/data/com.termux/files/usr/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/data/data/com.termux/files/usr/lib/python3.8/ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "/data/data/com.termux/files/usr/lib/python3.8/ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionAbortedError(103, 'Software caused connection abort'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/telebot/util.py", line 60, in run
+    task(*args, **kwargs)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/telebot/__init__.py", line 279, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1), timeout=timeout)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/telebot/__init__.py", line 249, in get_updates
+    json_updates = apihelper.get_updates(self.token, offset, limit, timeout, allowed_updates)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/telebot/apihelper.py", line 194, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/telebot/apihelper.py", line 57, in _make_request
+    result = _get_req_session().request(method, request_url, params=params, files=files,
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/requests/adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionAbortedError(103, 'Software caused connection abort'))
+"
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/connectionpool.py", line 665, in urlopen
+    httplib_response = self._make_request(
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/connectionpool.py", line 421, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    httplib_response = conn.getresponse()
+  File "/data/data/com.termux/files/usr/lib/python3.8/http/client.py", line 1322, in getresponse
+    response.begin()
+  File "/data/data/com.termux/files/usr/lib/python3.8/http/client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "/data/data/com.termux/files/usr/lib/python3.8/http/client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/data/data/com.termux/files/usr/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/data/data/com.termux/files/usr/lib/python3.8/ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "/data/data/com.termux/files/usr/lib/python3.8/ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+ConnectionAbortedError: [Errno 103] Software caused connection abort
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/connectionpool.py", line 719, in urlopen
+    retries = retries.increment(
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/util/retry.py", line 400, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/packages/six.py", line 734, in reraise
+    raise value.with_traceback(tb)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/connectionpool.py", line 665, in urlopen
+    httplib_response = self._make_request(
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/connectionpool.py", line 421, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    httplib_response = conn.getresponse()
+  File "/data/data/com.termux/files/usr/lib/python3.8/http/client.py", line 1322, in getresponse
+    response.begin()
+  File "/data/data/com.termux/files/usr/lib/python3.8/http/client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "/data/data/com.termux/files/usr/lib/python3.8/http/client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/data/data/com.termux/files/usr/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/data/data/com.termux/files/usr/lib/python3.8/ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "/data/data/com.termux/files/usr/lib/python3.8/ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionAbortedError(103, 'Software caused connection abort'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 182, in <module>
+    bot.polling()
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/telebot/__init__.py", line 392, in polling
+    self.__threaded_polling(none_stop, interval, timeout)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/telebot/__init__.py", line 415, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/telebot/util.py", line 79, in raise_exceptions
+    six.reraise(self.exc_info[0], self.exc_info[1], self.exc_info[2])
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/six.py", line 703, in reraise
+    raise value
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/telebot/util.py", line 60, in run
+    task(*args, **kwargs)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/telebot/__init__.py", line 279, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1), timeout=timeout)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/telebot/__init__.py", line 249, in get_updates
+    json_updates = apihelper.get_updates(self.token, offset, limit, timeout, allowed_updates)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/telebot/apihelper.py", line 194, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/telebot/apihelper.py", line 57, in _make_request
+    result = _get_req_session().request(method, request_url, params=params, files=files,
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/data/data/com.termux/files/usr/lib/python3.8/site-packages/requests/adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionAbortedError(103, 'Software caused connection abort'))
